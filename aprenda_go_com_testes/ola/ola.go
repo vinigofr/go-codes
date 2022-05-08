@@ -4,14 +4,20 @@ package main
 import "fmt"
 
 // Oi, teste
-func Ola(value string) string{
-    var prefixoOlaPT = "Olá"
-    if value != "" {
-        return fmt.Sprintf("%v %v", prefixoOlaPT, value)
+func Ola(nome, idioma string) string{
+    var prefixoPT = "Olá, "
+    var prefixoES = "Hola, "
+    if nome == "" {
+        nome = "mundo"
     }
-    return "Olá mundo"
+
+    if idioma == "Espanhol" {
+        return prefixoES + nome
+    }
+
+    return prefixoPT + nome
 }
 
 func main() {
-    fmt.Println(Ola(""))
+    fmt.Println(Ola("", "espanhol"))
 }
