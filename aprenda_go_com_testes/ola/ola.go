@@ -5,8 +5,9 @@ import "fmt"
 
 // Oi, teste
 func Ola(value string) string{
+    var prefixoOlaPT = "Olá"
     if value != "" {
-        return fmt.Sprintf("Olá %v", value)
+        return fmt.Sprintf("%v %v", prefixoOlaPT, value)
     }
     return "Olá"
 }
