@@ -18,19 +18,23 @@ func prefixoSaudacao(idioma string) (prefixo string){
         prefixoES = "Hola, "
         prefixoFR = "Bonjour, "
     )
-    
-    var prefixoAtual string;
 
     switch idioma {
     case "Francês":
-        prefixoAtual = prefixoFR
+        prefixo = prefixoFR
     case "Espanhol":
-        prefixoAtual = prefixoES
+        prefixo = prefixoES
     default:
-        prefixoAtual = prefixoPT
+        prefixo = prefixoPT
     }
 
-    return prefixoAtual
+    /*
+        Quando se retorna dessa forma, sem nenhum valor
+        o código usa como referência a variável 'prexixo'
+        auto-declarada na declaração da função. Ela é
+        existente e é tradada como retorno
+    */
+    return
 }
 
 func main() {
