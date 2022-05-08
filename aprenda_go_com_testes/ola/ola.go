@@ -5,17 +5,32 @@ import "fmt"
 
 // Oi, teste
 func Ola(nome, idioma string) string{
-    var prefixoPT = "Olá, "
-    var prefixoES = "Hola, "
     if nome == "" {
         nome = "mundo"
     }
 
-    if idioma == "Espanhol" {
-        return prefixoES + nome
+    return prefixoSaudacao(idioma) + nome    
+}
+
+func prefixoSaudacao(idioma string) (prefixo string){
+    const (
+        prefixoPT = "Olá, "
+        prefixoES = "Hola, "
+        prefixoFR = "Bonjour, "
+    )
+    
+    var prefixoAtual string;
+
+    switch idioma {
+    case "Francês":
+        prefixoAtual = prefixoFR
+    case "Espanhol":
+        prefixoAtual = prefixoES
+    default:
+        prefixoAtual = prefixoPT
     }
 
-    return prefixoPT + nome
+    return prefixoAtual
 }
 
 func main() {
