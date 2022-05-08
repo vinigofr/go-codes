@@ -7,10 +7,32 @@ package main
 import "testing"
 
 func TestOla(t *testing.T) {
-    resultado := Ola("")
-    esperado := "Olá"
-
-    if resultado != esperado {
-        t.Errorf("resultado '%s', esperado '%s'", resultado, esperado)
+    verificaMensagemCorreta := func(t *testing.T, resultado, esperado string) {
+        /*
+            t.Helper () é necessário para dizermos ao conjunto de testes que
+            este é um método auxiliar. Ao fazer isso, quando o teste falhar, o
+            número da linha relatada estará em nossa chamada de função, e não
+            dentro do nosso auxiliar de teste. Isso ajudará outros
+            desenvolvedores a rastrear os problemas com maior facilidade.
+            Se você ainda não entendeu, comente, faça um teste falhar e
+            observe a saída do teste.
+        */    
+        t.Helper()
+        if resultado != esperado {
+            t.Errorf("resultado '%v', esperado '%v'", resultado, esperado)
+        }
     }
+ 
+    t.Run("Diz olá para as pessoas", func(t *testing.T) {
+        resultado := Ola("Vinicius")
+        esperado := "Olá Vinicius"
+        verificaMensagemCorreta(t, resultado, esperado)
+    });
+
+    t.Run("Diz 'Olá mundo' quando passado uma string vazia", func(t *testing.T) {
+        resultado := Ola("")
+        esperado := "Olá mundo"
+        verificaMensagemCorreta(t, resultado, esperado)
+    });
+
 }

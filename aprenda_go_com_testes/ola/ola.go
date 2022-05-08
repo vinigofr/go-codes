@@ -9,7 +9,7 @@ func Ola(value string) string{
     if value != "" {
         return fmt.Sprintf("%v %v", prefixoOlaPT, value)
     }
-    return "Olá"
+    return "Olá mundo"
 }
 
 func main() {
