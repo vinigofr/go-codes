@@ -37,21 +37,21 @@ func TestSomaTudo(t *testing.T) {
 }
 
 func TestSomaTodoOResto(t *testing.T) {
-	t.Run("Testa casos normais", func(t *testing.T) {
-		resultado := SomaTodoOResto([]int{1, 2}, []int{0, 9}, []int{1, 5, 1}, []int{1})
-		esperado := []int{2, 9, 6, 0}
-
+	verificaSomas := func(t *testing.T, resultado, esperado []int) {
+		t.Helper()
 		if !reflect.DeepEqual(resultado, esperado) {
 			t.Errorf("resultado %v, esperado %v", resultado, esperado)
 		}
+	}
+	t.Run("Testa casos normais", func(t *testing.T) {
+		resultado := SomaTodoOResto([]int{1, 2}, []int{0, 9}, []int{1, 5, 1}, []int{1})
+		esperado := []int{2, 9, 6, 0}
+		verificaSomas(t, resultado, esperado)
 	})
 
 	t.Run("Teste um slice vazio", func(t *testing.T) {
 		resultado := SomaTodoOResto([]int{}, []int{0, 9})
 		esperado := []int{0, 9}
-
-		if !reflect.DeepEqual(resultado, esperado) {
-			t.Errorf("resultado %v, esperado %v", resultado, esperado)
-		}
+		verificaSomas(t, resultado, esperado)
 	})
 }
