@@ -21,10 +21,10 @@ func TestSoma(t *testing.T) {
 func TestSomaTudo(t *testing.T) {
 	slice1 := []int{1, 2, 3, 4}
 	slice2 := []int{5, 6, 7, 8}
-	slice3 := []int{9, 10, 11, 12}
+	slice3 := []int{9, 10, 11, 12, 13}
 
 	resultado := SomaTudo(slice1, slice2, slice3)
-	esperado := []int{10, 26, 42}
+	esperado := []int{10, 26, 55}
 
 	/*
 		Podemos verificar os slices um a um através de iteração, mas para este caso
@@ -34,4 +34,24 @@ func TestSomaTudo(t *testing.T) {
 	if !reflect.DeepEqual(resultado, esperado) {
 		t.Errorf("resultado %v esperado %v", resultado, esperado)
 	}
+}
+
+func TestSomaTodoOResto(t *testing.T) {
+	t.Run("Testa casos normais", func(t *testing.T) {
+		resultado := SomaTodoOResto([]int{1, 2}, []int{0, 9}, []int{1, 5, 1}, []int{1})
+		esperado := []int{2, 9, 6, 0}
+
+		if !reflect.DeepEqual(resultado, esperado) {
+			t.Errorf("resultado %v, esperado %v", resultado, esperado)
+		}
+	})
+
+	t.Run("Teste um slice vazio", func(t *testing.T) {
+		resultado := SomaTodoOResto([]int{}, []int{0, 9})
+		esperado := []int{0, 9}
+
+		if !reflect.DeepEqual(resultado, esperado) {
+			t.Errorf("resultado %v, esperado %v", resultado, esperado)
+		}
+	})
 }

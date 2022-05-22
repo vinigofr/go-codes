@@ -8,13 +8,24 @@ func Soma(numbers []int) int {
 	return total
 }
 
-func SomaTudo(numerosParaSomar ...[]int) (somas []int) {
-	for _, currentSlice := range numerosParaSomar {
-		currentSum := 0
-		for _, number := range currentSlice {
-			currentSum += number
-		}
-		somas = append(somas, currentSum)
+func SomaTudo(numerosParaSomar ...[]int) []int {
+	var somas []int
+	for _, numeros := range numerosParaSomar {
+		somas = append(somas, Soma(numeros))
 	}
-	return
+	return somas
+}
+
+func SomaTodoOResto(numerosParaSomar ...[]int) []int {
+	var somas []int
+
+	for _, numeros := range numerosParaSomar {
+		if len(numeros) == 0 {
+			somas = append(somas, 0)
+		} else {
+			final := numeros[1:]
+			somas = append(somas, Soma(final))
+		}
+	}
+	return somas
 }
