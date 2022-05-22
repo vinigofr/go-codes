@@ -7,3 +7,14 @@ func Soma(numbers []int) int {
 	}
 	return total
 }
+
+func SomaTudo(numerosParaSomar ...[]int) (somas []int) {
+	for _, currentSlice := range numerosParaSomar {
+		currentSum := 0
+		for _, number := range currentSlice {
+			currentSum += number
+		}
+		somas = append(somas, currentSum)
+	}
+	return
+}
