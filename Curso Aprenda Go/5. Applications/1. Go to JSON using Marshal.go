@@ -8,27 +8,27 @@ import (
 // Lembrando que todo struct precisa ter a primeira letra maiúscula quando for
 // Necessária a exportação para json
 type Pessoa struct {
-	Name string
-	Sobrenome string
-	Idade int
-	Profissao string
+	Name           string `json:"nome"`
+	Sobrenome      string
+	Idade          int
+	Profissao      string
 	Conta_bancaria int
 }
 
 func main() {
 	vinicius := Pessoa{
-		Name: "Vinicius",
-		Sobrenome: "Gouveia",
-		Idade: 22,
-		Profissao: "Dev",
+		Name:           "Vinicius",
+		Sobrenome:      "Gouveia",
+		Idade:          22,
+		Profissao:      "Dev",
 		Conta_bancaria: 1,
 	}
 
 	raquel := Pessoa{
-		Name: "Raquel",
-		Sobrenome: "Gouveia",
-		Idade: 45,
-		Profissao: "Costureira",
+		Name:           "Raquel",
+		Sobrenome:      "Gouveia",
+		Idade:          45,
+		Profissao:      "Costureira",
 		Conta_bancaria: 40000,
 	}
 

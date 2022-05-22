@@ -1,0 +1,5 @@
+mode: set
+curso/Go_tests/4_benchmarks/main.go:7.13,10.2 2 0
+curso/Go_tests/4_benchmarks/main.go:12.31,14.28 2 1
+curso/Go_tests/4_benchmarks/main.go:18.2,18.14 1 1
+curso/Go_tests/4_benchmarks/main.go:14.28,16.3 1 1

@@ -5,12 +5,13 @@ import (
 )
 
 func main() {
-	c := make(chan int, 1)
+	c := make(chan string, 20)
 
 	go func() {
-		c <- 42
+		c <- "vinicius"
 	}()
 
 
+	fmt.Println(<-c)
 	fmt.Println(<-c)
 }

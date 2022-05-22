@@ -8,21 +8,21 @@ import "fmt"
 
 // 1. Primeiro montamos o tipo base pessoa
 type pessoa struct {
-	nome string
+	nome      string
 	sobrenome string
-	idade int
+	idade     int
 }
 
 // 2. Fazemos com que dentista e arquiteto herdem as propriedades de pessoa
 type dentista struct {
 	pessoa
 	atendimentos_realizados string
-	salario float64
+	salario                 float64
 }
 
 type arquiteto struct {
 	pessoa
-	salario float64
+	salario    float64
 	tipo_build string
 }
 
@@ -39,25 +39,25 @@ func main() {
 	// 4. Montamos a estrutura com os dados específicos com cada especialização da pessoa
 	umDentista := dentista{
 		pessoa: pessoa{
-			nome: "Vinicius",
+			nome:      "Vinicius",
 			sobrenome: "Gouveia",
-			idade: 22,
+			idade:     22,
 		},
 		atendimentos_realizados: "50",
-		salario: 105,
+		salario:                 105,
 	}
 
 	umArquiteto := arquiteto{
 		pessoa: pessoa{
-			nome: "Vinicius",
+			nome:      "Vinicius",
 			sobrenome: "Gouveia",
-			idade: 22,
+			idade:     22,
 		},
-		salario: 105,
+		salario:    105,
 		tipo_build: "grandes prédios",
 	}
 
-	// Arui podemos ter acesso ao método oibomdia() de cada pessoa.
+	// Aqui podemos ter acesso ao método oibomdia() de cada pessoa.
 	umDentista.oibomdia()
 	umArquiteto.oibomdia()
 
@@ -67,7 +67,6 @@ func main() {
 	serHumano(umDentista)
 
 }
-
 
 // ====== Um outro caso que pode ser feito, é a criação de interface.
 // 1. Criamos um tipo "gente" e montamos quais métodos deverão ser usados.
@@ -84,12 +83,8 @@ func serHumano(g gente) {
 
 	switch g.(type) {
 	case dentista:
-		fmt.Println("Deu dentista");
+		fmt.Println("Deu dentista")
 	case arquiteto:
-		fmt.Println("Deu arquiteto");
+		fmt.Println("Deu arquiteto")
 	}
 }
-
-
-
-

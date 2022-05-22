@@ -6,7 +6,7 @@ var canalGlobal = make(chan int)
 
 func main() {
 	for i := 0; i < 10; i++ {
-		go enviaAoCanal()
+		go enviaAoCanal(chan<- int (canalGlobal))
 	}
 
 	for i := 0; i < 50; i++ {
@@ -14,7 +14,7 @@ func main() {
 	}
 }
 
-func enviaAoCanal() {
+func enviaAoCanal(chan<- int) {
 	for i := 0; i < 5; i++ {
 		canalGlobal <- i
 	}

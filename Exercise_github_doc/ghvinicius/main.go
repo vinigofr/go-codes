@@ -1,6 +1,6 @@
 package ghvinicius
 
-import "fmt"
+import ("fmt" "github.com/vinigofr/ghvinicius")
 
 func main() {
 	GitHub()

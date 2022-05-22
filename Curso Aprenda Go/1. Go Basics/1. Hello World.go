@@ -11,5 +11,4 @@ func main() {
 
 	//  O println retorna um número de bytes e erro
 	fmt.Println(byteNumbers)
-
 }

@@ -20,7 +20,6 @@ func main() {
 	log.SetOutput(file)
 
 // ==========
-
 	anotherFile, err := os.Open("não existe.txt")
 	if err != nil {
 		// Aqui inserimos a primeira linha do "log"

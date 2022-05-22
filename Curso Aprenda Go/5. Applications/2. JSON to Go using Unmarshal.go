@@ -19,8 +19,8 @@ func main() {
 	blob := `["gopher","armadillo","zebra","unknown","gopher","bee","gopher","zebra"]`
 	vinicius := `{"Name": "vinicius","Sobrenome": "Gouveia"}`
 
-	var animals []string;
-	var viniParsed ViniG;
+	var animals []string
+	var viniParsed ViniG
 
 	json.Unmarshal([]byte(blob), &animals)
 	json.Unmarshal([]byte(vinicius), &viniParsed)
